@@ -1,1 +1,24 @@
 
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Firebase-->
+		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	</head>
+	<body>
+		<script>
+		var myDataRef = new Firebase('https://infinote.firebaseio.com/');
+myDataRef.on('child_added', function(notes) {
+console.log(notes);
+});
+
+myDataRef.on('child_removed', function(notes) {
+console.log(notes);
+});
+
+myDataRef.on('child_changed', function(notes, oldColor) {
+	console.log(notes);
+});
+		</script>
+	</body>
+</html>
